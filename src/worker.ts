@@ -29,4 +29,11 @@ export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		return new Response('Hello World!');
 	},
+	async scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext) {
+		ctx.waitUntil(this.triggerEvent(controller))
+	},
+	async triggerEvent(controller: ScheduledController) {
+		console.log(controller.cron);
+		console.log("cron processed");
+	},
 };

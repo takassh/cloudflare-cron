@@ -1,4 +1,4 @@
-name = "durable-objects-requests-scheduler"
+name = "cron"
 main = "src/worker.ts"
 compatibility_date = "2023-07-17"
 
@@ -49,3 +49,6 @@ compatibility_date = "2023-07-17"
 # [[migrations]]
 # tag = "v1"
 # new_classes = ["MyDurableObject"]
+
+[triggers]
+crons = ["0 * * * *"]
